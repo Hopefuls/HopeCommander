@@ -22,5 +22,15 @@ jobs:
         java-version: 1.8
     - name: Build maven Package
       run: mvn -B package --file pom.xml
-    - name: GitHub Releases
-      uses: fnkr/github-action-ghr@v1.3
+    - name: tasks
+      run: |
+        echo ${{ github.ref }} > ref.txt
+        cat ref.txt
+    - name: Release
+      uses: fnkr/github-action-ghr@v1
+      if: startsWith(github.ref, 'refs/tags/')
+      env:
+        GHR_COMPRESS: zip
+        GHR_PATH: ref.txt
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
