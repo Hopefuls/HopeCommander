@@ -14,11 +14,11 @@ import org.bukkit.entity.Player;
 
 public class Spigot_CMD_hc implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String cmd, String[] args) {
-        // if (sender instanceof Player) {
-        //   sender.sendMessage("§6HopeCommander made by HopeDev");
-        // sender.sendMessage("§9https://github.com/Hopefuls/HopeCommander/");
-        // return true;
-        // }
+        if (sender instanceof Player) {
+            sender.sendMessage("§6HopeCommander made by HopeDev");
+            sender.sendMessage("§9https://github.com/Hopefuls/HopeCommander/");
+            return true;
+        }
         StringBuilder sb = new StringBuilder();
         if (args.length < 1)
             return false;
