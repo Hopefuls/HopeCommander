@@ -1,4 +1,5 @@
 # HopeCommander - the easy to use bungeecord command bridge for anticheats!
+[![CodeFactor](https://www.codefactor.io/repository/github/hopefuls/hopecommander/badge)](https://www.codefactor.io/repository/github/hopefuls/hopecommander)
 This plugin is mean't as an easy to use alternative for Anticheats used in Networks that require punishment commands.
 ## How to install:
 
