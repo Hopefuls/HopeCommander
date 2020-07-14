@@ -1,0 +1,7 @@
+name: HopeCommander
+main: me.hopedev.HopeCommander.Main
+version: 1.0.0
+commands:
+  hc:
+    description: Main Command for HopeCommander
+    permission: hc.command
