@@ -1,8 +1,9 @@
 package me.hopedev.hopecommander.universal;
 
 import me.hopedev.hopecommander.Bungeecord.BungeeMain;
-import me.hopedev.hopecommander.Bungeecord.BungeeTestCommand;
+import me.hopedev.hopecommander.Bungeecord.Bungee_setup;
 import me.hopedev.hopecommander.Spigot.SpigotMain;
+import me.hopedev.hopecommander.Spigot.Spigot_setup;
 
 public class UNI_onStartup {
     public static BACKEND backendresult;
@@ -39,14 +40,11 @@ public class UNI_onStartup {
     public static void setup(BACKEND backend) {
         switch (backend) {
             case PROXY:
-                BungeeMain bungeeMain = (BungeeMain) new UNIVERSAL(BACKEND.PROXY).getPlugin();
-                bungeeMain.getProxy().getPluginManager().registerCommand(bungeeMain, new BungeeTestCommand("testcommand123"));
-                //  bungeeMain.getProxy().getPluginManager().registerListener(bungeeMain, new PluginMSGListener());
-                bungeeMain.getProxy().registerChannel("hope:hopecommandersender");
+                Bungee_setup.setup();
                 break;
 
             case SUBSERVER:
-
+                Spigot_setup.setup();
                 break;
         }
     }

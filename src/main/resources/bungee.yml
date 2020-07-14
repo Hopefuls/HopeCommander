@@ -1,4 +1,4 @@
-name: HopeCommander-Spigot
+name: HopeCommander-Bungee
 main: me.hopedev.hopecommander.Bungeecord.BungeeMain
 version: 1.0.0
 description: A Bridge between Spigot and Bungee, one way only

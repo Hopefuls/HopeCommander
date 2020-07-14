@@ -8,7 +8,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-public class CMD_hc implements CommandExecutor {
+public class Spigot_CMD_hc implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String cmd, String[] args) {
         Player p = (Player) sender;
         sendTestData(p);

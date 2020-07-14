@@ -1,6 +1,6 @@
 package me.hopedev.hopecommander;
 
-import me.hopedev.hopecommander.commands.CMD_hc;
+import me.hopedev.hopecommander.commands.Spigot_CMD_hc;
 import org.bukkit.plugin.java.JavaPlugin;
 
 
@@ -21,7 +21,7 @@ public class Main extends JavaPlugin {
         Main = this;
         System.out.println("Starting HopeCommander...");
         System.out.println("Registering Commands..");
-        this.getCommand("hc").setExecutor(new CMD_hc());
+        this.getCommand("hc").setExecutor(new Spigot_CMD_hc());
         System.out.append("Registering PluginChannels");
         this.getServer().getMessenger().registerOutgoingPluginChannel(this, "test:channel");
         System.out.println("HopeCommander enabled! Thanks for using :)");
