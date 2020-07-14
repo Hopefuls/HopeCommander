@@ -21,7 +21,7 @@ Still lost? DM me on Discord @ `Hope#5050`, join the [Skamps-Dev Team Discord](h
  
  ## Disclaimer / Copyright / Terms of Service
 
-You are not allowed to:
+You are **NOT** allowed to:
 - Decompile the Plugin and use functions for your own purposes
 - sell it and/or redistribute it with rebranding (doesn't matter if it is modified or not)
 - if you're a developer of one of the many anticheats, make sure to dm me, i would be happy :)
