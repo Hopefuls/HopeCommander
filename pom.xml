@@ -7,7 +7,12 @@
     <groupId>me.hopedev</groupId>
     <artifactId>HopeCommander</artifactId>
     <version>1.0</version>
-
+    <repositories>
+        <repository>
+            <id>bungeecord-repo</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </repository>
+    </repositories>
     <dependencies>
         <!--This adds the Spigot API artifact to the build -->
         <dependency>
@@ -16,7 +21,20 @@
             <version>1.16.1-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
-
+        <dependency>
+            <groupId>net.md-5</groupId>
+            <artifactId>bungeecord-api</artifactId>
+            <version>1.16-R0.2-SNAPSHOT</version>
+            <type>jar</type>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>net.md-5</groupId>
+            <artifactId>bungeecord-api</artifactId>
+            <version>1.16-R0.2-SNAPSHOT</version>
+            <type>javadoc</type>
+            <scope>provided</scope>
+        </dependency>
         <!--This adds the Bukkit API artifact to the build -->
         <!-- Do not include this in the pom.xml file if the Spigot API is already added -->
     </dependencies>
