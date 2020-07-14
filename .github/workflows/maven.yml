@@ -22,19 +22,3 @@ jobs:
         java-version: 1.8
     - name: Build maven Package
       run: mvn -B package --file pom.xml
-    - name: Create a Release
-      uses: actions/create-release@v1
-      with:
-        tag_name: Release v1.0.1
-    # The name of the release. For example, `Release v1.0.1`
-        release_name: Testing
-    # Text describing the contents of the tag.
-        body: New release
-    # Path to file with information about the tag.
-        body_path: "none"
-    # `true` to create a draft (unpublished) release, `false` to create a published one. Default: `false`
-        draft: "true"
-    # `true` to identify the release as a prerelease. `false` to identify the release as a full release. Default: `false`
-        prerelease: "false"
-    # Any branch or commit SHA the Git tag is created from, unused if the Git tag already exists. Default: SHA of current commit
-        commitish: SHA
