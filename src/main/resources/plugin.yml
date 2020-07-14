@@ -4,6 +4,7 @@ main: me.hopedev.hopecommander.Spigot.SpigotMain
 version: 1.0.0
 api-version: 1.14
 description: A Bridge between spigot and bungee, one way only
+author: HopeDev
 commands:
   hcspigot:
     description: Main Command for HopeCommander
