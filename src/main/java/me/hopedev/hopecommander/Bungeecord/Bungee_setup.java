@@ -6,8 +6,10 @@ import me.hopedev.hopecommander.universal.UNI_onStartup;
 public class Bungee_setup {
     public static void setup() {
         BungeeMain bungeeMain = (BungeeMain) new UNIVERSAL(UNI_onStartup.BACKEND.PROXY).getPlugin();
-        bungeeMain.getProxy().getPluginManager().registerCommand(bungeeMain, new BungeeTestCommand("testcommand123"));
+        bungeeMain.getProxy().getPluginManager().registerCommand(bungeeMain, new Bungee_CMD_hc("hc"));
         bungeeMain.getProxy().getPluginManager().registerListener(bungeeMain, new PluginMSGListener());
-        bungeeMain.getProxy().registerChannel("hope:hopecommandersender");
+        bungeeMain.getProxy().registerChannel("hope:hopecmdsend");
+        System.out.println("Successfully registered Messaging channel!");
+
     }
 }

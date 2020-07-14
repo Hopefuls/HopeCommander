@@ -12,8 +12,8 @@ public class Spigot_setup {
         System.out.println("Registering Commands..");
         spigotMain.getCommand("hcspigot").setExecutor(new Spigot_CMD_hc());
         System.out.append("Registering PluginChannels..");
-        spigotMain.getServer().getMessenger().registerOutgoingPluginChannel(spigotMain, "hope:hopecommandersender");
-        System.out.println("HopeCommander enabled! Thanks for using it :)");
+        spigotMain.getServer().getMessenger().registerOutgoingPluginChannel(spigotMain, "hope:hopecmdsend");
+        System.out.println("HopeCommander enabled successfully!");
 
     }
 }
