@@ -39,9 +39,15 @@ public class Spigot_CMD_hc implements CommandExecutor {
         // If you don't care about the player
         // Player player = Iterables.getFirst(Bukkit.getOnlinePlayers(), null);
         // Else, specify them
+        if (Bukkit.getServer().getOnlinePlayers().size() == 0) {
+            Bukkit.getConsoleSender().sendMessage("§cThis command can only be run if at least one Player is on your server");
+            return;
+        }
+
         Player player = Iterables.getFirst(Bukkit.getOnlinePlayers(), null);
         SpigotMain spigotMain = (SpigotMain) new UNIVERSAL(UNI_onStartup.BACKEND.SUBSERVER).getPlugin();
         player.sendPluginMessage(spigotMain, "hope:hopecmdsend", out.toByteArray());
+
     }
 }
 
