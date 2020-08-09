@@ -13,6 +13,18 @@ public class Spigot_setup {
         spigotMain.getCommand("hcspigot").setExecutor(new Spigot_CMD_hc());
         System.out.append("Registering PluginChannels..");
         spigotMain.getServer().getMessenger().registerOutgoingPluginChannel(spigotMain, "hope:hopecmdsend");
+
+        // Spigot exclusive | added in v 1.2
+        spigotMain.saveDefaultConfig();
+        if (spigotMain.getConfig().getBoolean("allowPlayersCommandUsage")) {
+            System.out.println("§c§l================HopeCommander================");
+            System.out.println("§cWarning! Your Players are able to execute /hcspigot when one applies:");
+            System.out.println("- §cThey have the Permission " + spigotMain.getConfig().getString("PermissionNode"));
+            if (spigotMain.getConfig().getBoolean("allowOperatorExecution")) {
+                System.out.println("- §cThey are opped");
+            }
+            System.out.println("§c§l================HopeCommander================");
+        }
         System.out.println("HopeCommander enabled successfully!");
 
     }
