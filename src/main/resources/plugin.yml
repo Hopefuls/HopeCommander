@@ -7,3 +7,4 @@ author: HopeDev
 commands:
   hcspigot:
     description: Main Command for HopeCommander
+    permission: hc.command
