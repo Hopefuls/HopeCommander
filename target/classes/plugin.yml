@@ -6,4 +6,3 @@ description: A Bridge between spigot and bungee, one way only
 author: HopeDev
 commands:
   hcspigot:
-    description: Main Command for HopeCommander

@@ -1,12 +1,11 @@
 package me.hopedev.hopecommander.universal;
 
 
-import com.sun.istack.internal.NotNull;
 
 public class UNIVERSAL {
     private static UNI_onStartup.BACKEND selbackend;
 
-    public UNIVERSAL(@NotNull UNI_onStartup.BACKEND backend) {
+    public UNIVERSAL(UNI_onStartup.BACKEND backend) {
         selbackend = backend;
     }
 
