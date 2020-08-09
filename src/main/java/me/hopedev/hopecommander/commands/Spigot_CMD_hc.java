@@ -15,81 +15,53 @@ import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.entity.Player;
 
 public class Spigot_CMD_hc implements CommandExecutor {
+
+    //Code cleanup done on 09/08/2020
     public boolean onCommand(CommandSender sender, Command command, String cmd, String[] args) {
-        if (sender instanceof Player) {
-            SpigotMain spigotMain = (SpigotMain) new UNIVERSAL(UNI_onStartup.BACKEND.SUBSERVER).getPlugin();
-            if (spigotMain.getConfig().getBoolean("allowPlayersCommandUsage")) {
-                if (sender.isOp() && spigotMain.getConfig().getBoolean("allowOperatorExecution")) {
-                    // System.out.println("Player is OP and allowOperatorExecution");
-                    // DO it lmao
-                    StringBuilder sb = new StringBuilder();
-                    if (args.length < 1) {
-                        sender.sendMessage("§6HopeCommander made by HopeDev");
-                        sender.sendMessage("§9https://github.com/Hopefuls/HopeCommander/");
-                        return false;
-                    }
+        SpigotMain spigotMain = (SpigotMain) new UNIVERSAL(UNI_onStartup.BACKEND.SUBSERVER).getPlugin();
 
-                    sendCommandRequestToProxy(StringUtils.join(args, " ", 0, args.length));
+        assert spigotMain != null;
+        boolean allowPlayersCommandUsage = spigotMain.getConfig().getBoolean("allowPlayersCommandUsage", false);
+        boolean allowOperatorExecution = spigotMain.getConfig().getBoolean("allowOperatorExecution", false);
 
-                } else if (sender.hasPermission(spigotMain.getConfig().getString("PermissionNode"))) {
+        String PermissionNode = spigotMain.getConfig().getString("PermissionNode", "hopecommander.useCommand");
+        assert PermissionNode != null;
 
-                    // System.out.println("Player has Permission, but not op");
+        if (sender instanceof ConsoleCommandSender) {
+            sender.sendMessage("Successfully_Sent");
+            sendCommandRequestToProxy(StringUtils.join(args, " ", 0, args.length));
+            return true;
 
-                    StringBuilder sb = new StringBuilder();
-                    if (args.length < 1) {
-                        sender.sendMessage("§6HopeCommander made by HopeDev");
-                        sender.sendMessage("§9https://github.com/Hopefuls/HopeCommander/");
-                        return false;
-                    }
-                    sendCommandRequestToProxy(StringUtils.join(args, " ", 0, args.length));
+        }
+        Player p = (Player) sender;
 
-                } else if (!sender.hasPermission(spigotMain.getConfig().getString("PermissionNode")) && sender.isOp()) {
-                    // System.out.println("Player is op but doesn't have permission");
-                    if (!spigotMain.getConfig().getBoolean("allowOperatorExecution")) {
-                        sender.sendMessage("§6HopeCommander made by HopeDev");
-                        sender.sendMessage("§9https://github.com/Hopefuls/HopeCommander/");
-                        return false;
-                    }
-                    // System.out.println("Player has Permission, but not op");
-
-                    StringBuilder sb = new StringBuilder();
-                    if (args.length < 1) {
-                        sender.sendMessage("§6HopeCommander made by HopeDev");
-                        sender.sendMessage("§9https://github.com/Hopefuls/HopeCommander/");
-                        return false;
-                    }
-                    sendCommandRequestToProxy(StringUtils.join(args, " ", 0, args.length));
-
-                } else {
-                    // System.out.println("Has nothing");
-                    sender.sendMessage("§6HopeCommander made by HopeDev");
-                    sender.sendMessage("§9https://github.com/Hopefuls/HopeCommander/");
-                    return false;
-                }
-
-
-            } else {
-                sender.sendMessage("§6HopeCommander made by HopeDev");
-                sender.sendMessage("§9https://github.com/Hopefuls/HopeCommander/");
-                return true;
-            }
+        if (!allowPlayersCommandUsage) {
+            sendResult(p);
             return true;
         }
+        if (p.isOp()) {
+            if (!p.hasPermission(PermissionNode)) {
+                sendResult(p);
+                return true;
+            }
+        } else if (!p.isOp()) {
 
-        StringBuilder sb = new StringBuilder();
-        if (args.length < 1) {
-            sender.sendMessage("§6HopeCommander made by HopeDev");
-            sender.sendMessage("§9https://github.com/Hopefuls/HopeCommander/");
-            return false;
+            if (!p.hasPermission(PermissionNode)) {
+                sendResult(p);
+                return true;
+            }
         }
+
         sendCommandRequestToProxy(StringUtils.join(args, " ", 0, args.length));
-        if (sender instanceof ConsoleCommandSender) {
-            sender.sendMessage("send");
-
-        }
 
         return true;
     }
+
+    public void sendResult(Player sender) {
+        sender.sendMessage("§6HopeCommander made by HopeDev");
+        sender.sendMessage("§9https://github.com/Hopefuls/HopeCommander/");
+    }
+
 
     public void sendCommandRequestToProxy(String commandtorun) {
         ByteArrayDataOutput out = ByteStreams.newDataOutput();
@@ -105,6 +77,8 @@ public class Spigot_CMD_hc implements CommandExecutor {
 
         Player player = Iterables.getFirst(Bukkit.getOnlinePlayers(), null);
         SpigotMain spigotMain = (SpigotMain) new UNIVERSAL(UNI_onStartup.BACKEND.SUBSERVER).getPlugin();
+        assert player != null;
+        assert spigotMain != null;
         player.sendPluginMessage(spigotMain, "hope:hopecmdsend", out.toByteArray());
 
     }
