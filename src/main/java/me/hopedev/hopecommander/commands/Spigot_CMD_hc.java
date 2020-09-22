@@ -29,6 +29,7 @@ public class Spigot_CMD_hc implements CommandExecutor {
 
         if (sender instanceof ConsoleCommandSender) {
             sender.sendMessage("Successfully_Sent");
+
             sendCommandRequestToProxy(StringUtils.join(args, " ", 0, args.length));
             return true;
 
