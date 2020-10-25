@@ -6,6 +6,7 @@ import com.google.common.io.ByteStreams;
 import me.hopedev.hopecommander.Spigot.SpigotMain;
 import me.hopedev.hopecommander.universal.UNIVERSAL;
 import me.hopedev.hopecommander.universal.UNI_onStartup;
+import org.apache.commons.lang.StringUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -19,15 +20,12 @@ public class Spigot_CMD_hc implements CommandExecutor {
             sender.sendMessage("§9https://github.com/Hopefuls/HopeCommander/");
             return true;
         }
-        StringBuilder sb = new StringBuilder();
         if (args.length < 1)
             return false;
 
-        for (int i = 0; i < args.length; i++) {
-            sb.append(args[i] + " ");
-        }
-        sendCommandRequestToProxy(sb.toString());
-        sender.sendMessage("send");
+
+        sendCommandRequestToProxy(StringUtils.join(args, " "));
+        sender.sendMessage("Send Request");
 
         return false;
     }
