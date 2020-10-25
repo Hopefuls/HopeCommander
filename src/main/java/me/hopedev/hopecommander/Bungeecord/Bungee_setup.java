@@ -10,6 +10,5 @@ public class Bungee_setup {
         bungeeMain.getProxy().getPluginManager().registerListener(bungeeMain, new PluginMSGListener());
         bungeeMain.getProxy().registerChannel("hope:hopecmdsend");
         System.out.println("Successfully registered Messaging channel!");
-
     }
 }
