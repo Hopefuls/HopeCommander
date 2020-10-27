@@ -9,6 +9,9 @@ import org.bukkit.entity.Player;
 
 public class ProxyRequester {
 
+    /*
+    Made by Aurel (Hope) on 27/10/2020
+     */
 
     public static void sendPluginMessage(String var1) {
         ByteArrayDataOutput out = ByteStreams.newDataOutput();
@@ -16,7 +19,6 @@ public class ProxyRequester {
 
         if (Bukkit.getServer().getOnlinePlayers().size() == 0) {
             Bukkit.getConsoleSender().sendMessage("§cThis command can only be run if at least one Player is on your server");
-            return;
         } else {
             Player player = Iterables.getFirst(Bukkit.getOnlinePlayers(), null);
             player.sendPluginMessage((SpigotMain) UniversalUsage.get().getPluginInstance(), "hope:hopecmdsend", out.toByteArray());

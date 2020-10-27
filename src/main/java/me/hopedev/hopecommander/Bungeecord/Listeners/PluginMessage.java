@@ -10,7 +10,9 @@ import net.md_5.bungee.api.plugin.Listener;
 import net.md_5.bungee.event.EventHandler;
 
 public class PluginMessage implements Listener {
-
+    /*
+    Made by Aurel (Hope) on 27/10/2020
+     */
     @EventHandler
     public void onMessageReceive(PluginMessageEvent event) {
         if (event.getTag().equalsIgnoreCase("hope:hopecmdsend")) {

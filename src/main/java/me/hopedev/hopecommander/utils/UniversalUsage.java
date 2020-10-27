@@ -1,7 +1,9 @@
 package me.hopedev.hopecommander.utils;
 
 public abstract class UniversalUsage {
-
+    /*
+    Made by Aurel (Hope) on 27/10/2020
+     */
     public static UniversalUsage universalUsage;
 
 
