@@ -1,7 +1,7 @@
 #Spigot related
 name: HopeCommander-Spigot
 main: me.hopedev.hopecommander.Spigot.SpigotMain
-version: 1.1.5
+version: 1.2.7
 description: A Bridge between spigot and bungee, one way only
 author: HopeDev
 commands:
