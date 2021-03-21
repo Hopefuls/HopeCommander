@@ -1,5 +1,0 @@
-name: HopeCommander-Bungee
-main: me.hopedev.hopecommander.Bungeecord.BungeeMain
-version: 1.1.0
-author: HopeDev
-description: A Bridge between Spigot and Bungee, one way only
