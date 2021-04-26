@@ -28,17 +28,19 @@ public class PluginMessage implements Listener {
             BungeeMain bungeeMain = (BungeeMain) UniversalUsage.get().getPluginInstance();
             ByteArrayDataInput in = ByteStreams.newDataInput(event.getData());
             String commandToRun = in.readUTF();
-            List<String> iplist = new ArrayList<>();
 
-            System.out.println("[HopeCommander] Command received from " + event.getSender().getAddress().getHostName() + ":" + event.getSender().getAddress().getPort() + "» " + commandToRun);
+            List<String> iplist = new ArrayList<>();
+            String hostAddress = event.getSender().getAddress().getAddress().getHostAddress();
+
+            System.out.println("[HopeCommander] Command received from " + hostAddress + ":" + event.getSender().getAddress().getPort() + "» " + commandToRun);
             try {
                 Configuration configuration = ConfigurationProvider.getProvider(YamlConfiguration.class).load(new File(bungeeMain.getDataFolder(), "config.yml"));
                 iplist = configuration.getStringList("whitelisted-ips");
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            if (!iplist.contains(event.getSender().getAddress().getHostName())) {
-                System.out.println("[HopeCommander][WARNING] Request IP "+event.getSender().getAddress().getHostName()+" IS NOT ON whitelisted-ips. Not Executing command!");
+            if (!iplist.contains(hostAddress)) {
+                System.out.println("[HopeCommander][WARNING] Request IP "+hostAddress+" IS NOT ON whitelisted-ips. Not Executing command!");
                 return;
             }
             System.out.println("[HopeCommander] executing...");
