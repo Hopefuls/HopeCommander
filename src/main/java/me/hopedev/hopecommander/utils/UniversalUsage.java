@@ -15,10 +15,6 @@ public abstract class UniversalUsage {
 
     public abstract Object getPluginInstance();
 
-
-
-
-
     public enum UsageType{
         BUNGEE,
         SPIGOT
