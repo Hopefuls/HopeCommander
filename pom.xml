@@ -6,7 +6,7 @@
 
     <groupId>me.hopedev</groupId>
     <artifactId>HopeCommander</artifactId>
-    <version>1.0</version>
+    <version>1.2.8</version>
     <build>
         <plugins>
             <plugin>
@@ -27,6 +27,10 @@
         <repository>
             <id>spigot-repo</id>
             <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
+        </repository>
+        <repository>
+            <id>paper-repo</id>
+            <url>https://repo.papermc.io/repository/maven-public/</url>
         </repository>
     </repositories>
     <dependencies>
@@ -49,6 +53,12 @@
             <artifactId>bungeecord-api</artifactId>
             <version>1.16-R0.4</version>
             <type>javadoc</type>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.velocitypowered</groupId>
+            <artifactId>velocity-api</artifactId>
+            <version>3.1.1</version>
             <scope>provided</scope>
         </dependency>
         <!--This adds the Bukkit API artifact to the build -->

@@ -1,5 +1,6 @@
 package me.hopedev.hopecommander.Spigot;
 
+import me.hopedev.hopecommander.Bungeecord.Bungee;
 import me.hopedev.hopecommander.utils.ProxyRequester;
 import org.apache.commons.lang.StringUtils;
 import org.bukkit.command.CommandExecutor;

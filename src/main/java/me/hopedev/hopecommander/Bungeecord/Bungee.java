@@ -1,6 +1,6 @@
 package me.hopedev.hopecommander.Bungeecord;
 
-import me.hopedev.hopecommander.Bungeecord.Listeners.PluginMessage;
+import me.hopedev.hopecommander.Bungeecord.listener.PluginMessage;
 import me.hopedev.hopecommander.utils.UniversalUsage;
 import net.md_5.bungee.api.CommandSender;
 import net.md_5.bungee.api.plugin.Command;
