@@ -6,7 +6,7 @@
 
     <groupId>me.hopedev</groupId>
     <artifactId>HopeCommander</artifactId>
-    <version>1.2.8</version>
+    <version>1.2.9</version>
     <build>
         <plugins>
             <plugin>
