@@ -21,7 +21,8 @@ public abstract class UniversalUsage {
 
     public enum UsageType{
         BUNGEE,
-        SPIGOT
+        SPIGOT,
+        VELOCITY
     }
 
     public static UniversalUsage get() {

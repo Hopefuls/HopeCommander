@@ -1,11 +1,9 @@
-package me.hopedev.hopecommander.Bungeecord.Listeners;
+package me.hopedev.hopecommander.Bungeecord.listener;
 
 import com.google.common.io.ByteArrayDataInput;
 import com.google.common.io.ByteStreams;
 import me.hopedev.hopecommander.Bungeecord.BungeeMain;
 import me.hopedev.hopecommander.utils.UniversalUsage;
-import net.md_5.bungee.api.CommandSender;
-import net.md_5.bungee.api.chat.ComponentBuilder;
 import net.md_5.bungee.api.event.PluginMessageEvent;
 import net.md_5.bungee.api.plugin.Listener;
 import net.md_5.bungee.config.Configuration;
