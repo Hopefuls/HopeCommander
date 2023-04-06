@@ -24,7 +24,7 @@ import java.util.List;
 @Plugin(
         id = "hopecommander",
         name = "HopeCommander",
-        version = "1.2.8",
+        version = "1.2.9",
         url = "https://cringe.dev/",
         description = "The easy to use Spigot to Bungeecord/Velocity Command bridge for your Pluginss",
         authors = {"hopedev"}
