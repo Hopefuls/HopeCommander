@@ -1,8 +1,8 @@
-package me.hopedev.hopecommander.Spigot;
+package me.hopedev.hopecommander.spigot;
 
-import me.hopedev.hopecommander.Bungeecord.Bungee;
 import me.hopedev.hopecommander.utils.ProxyRequester;
-import org.apache.commons.lang.StringUtils;
+
+import org.apache.commons.lang3.StringUtils;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;

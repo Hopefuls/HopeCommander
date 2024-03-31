@@ -1,4 +1,4 @@
-package me.hopedev.hopecommander.Bungeecord;
+package me.hopedev.hopecommander.bungeecord;
 
 import net.md_5.bungee.api.plugin.Plugin;
 

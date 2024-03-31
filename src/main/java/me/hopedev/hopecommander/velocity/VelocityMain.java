@@ -10,10 +10,10 @@ import com.velocitypowered.api.proxy.ProxyServer;
 import com.velocitypowered.api.proxy.messages.ChannelIdentifier;
 import com.velocitypowered.api.proxy.messages.MinecraftChannelIdentifier;
 import me.hopedev.hopecommander.velocity.listener.PlayerChatListener;
-import ninja.leaping.configurate.ConfigurationNode;
-import ninja.leaping.configurate.objectmapping.ObjectMappingException;
-import ninja.leaping.configurate.yaml.YAMLConfigurationLoader;
 import org.slf4j.Logger;
+import org.spongepowered.configurate.ConfigurationNode;
+import org.spongepowered.configurate.serialize.SerializationException;
+import org.spongepowered.configurate.yaml.YamlConfigurationLoader;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -24,7 +24,7 @@ import java.util.List;
 @Plugin(
         id = "hopecommander",
         name = "HopeCommander",
-        version = "1.2.9",
+        version = "2.0.0",
         url = "https://cringe.dev/",
         description = "The easy to use Spigot to Bungeecord/Velocity Command bridge for your Pluginss",
         authors = {"hopedev"}
@@ -83,8 +83,8 @@ public class VelocityMain {
 
     private ConfigurationNode registerConfig(){
         // Configuration
-        YAMLConfigurationLoader loader = YAMLConfigurationLoader.builder()
-                .setPath(pluginPath.resolve("config.yml"))
+        YamlConfigurationLoader loader = YamlConfigurationLoader.builder()
+                .path(pluginPath.resolve("config.yml"))
                 .build();
 
         try {
@@ -98,8 +98,8 @@ public class VelocityMain {
 
     private List<String> getIp(ConfigurationNode node){
         try {
-            return node.getNode("whitelisted-ips").getList(TypeToken.of(String.class));
-        } catch (ObjectMappingException e) {
+            return node.node("whitelisted-ips").getList(String.class);
+        } catch (SerializationException e) {
             logger.error("Unable to load configuration, disabling plugin...", e);
             server.shutdown();
             return null;

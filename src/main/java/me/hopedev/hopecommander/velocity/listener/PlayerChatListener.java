@@ -38,7 +38,7 @@ public class PlayerChatListener {
 
         String hostAddress = ((ServerConnection) event.getSource()).getServerInfo().getAddress().getHostString();
         String port = String.valueOf(((ServerConnection) event.getSource()).getServerInfo().getAddress().getPort());
-        logger.info("Command received from " + hostAddress + ":" + port + " » " + commandToRun);
+        logger.info("Command received from " + hostAddress + ":" + port + " >> " + commandToRun);
 
         if (!ip.contains(hostAddress)) {
             logger.warn("Request IP " + hostAddress + " IS NOT ON whitelisted-ips. Not Executing command!");

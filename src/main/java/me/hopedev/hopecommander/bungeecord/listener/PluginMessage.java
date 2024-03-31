@@ -1,8 +1,9 @@
-package me.hopedev.hopecommander.Bungeecord.listener;
+package me.hopedev.hopecommander.bungeecord.listener;
 
 import com.google.common.io.ByteArrayDataInput;
 import com.google.common.io.ByteStreams;
-import me.hopedev.hopecommander.Bungeecord.BungeeMain;
+
+import me.hopedev.hopecommander.bungeecord.BungeeMain;
 import me.hopedev.hopecommander.utils.UniversalUsage;
 import net.md_5.bungee.api.event.PluginMessageEvent;
 import net.md_5.bungee.api.plugin.Listener;
@@ -30,7 +31,7 @@ public class PluginMessage implements Listener {
             List<String> iplist = new ArrayList<>();
             String hostAddress = event.getSender().getAddress().getAddress().getHostAddress();
 
-            System.out.println("[HopeCommander] Command received from " + hostAddress + ":" + event.getSender().getAddress().getPort() + "» " + commandToRun);
+            System.out.println("[HopeCommander] Command received from " + hostAddress + ":" + event.getSender().getAddress().getPort() + ">> " + commandToRun);
             try {
                 Configuration configuration = ConfigurationProvider.getProvider(YamlConfiguration.class).load(new File(bungeeMain.getDataFolder(), "config.yml"));
                 iplist = configuration.getStringList("whitelisted-ips");

@@ -1,4 +1,4 @@
-package me.hopedev.hopecommander.Spigot;
+package me.hopedev.hopecommander.spigot;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
