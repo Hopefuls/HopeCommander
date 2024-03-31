@@ -1,10 +1,7 @@
-package me.hopedev.hopecommander.Spigot;
+package me.hopedev.hopecommander.spigot;
 
 import me.hopedev.hopecommander.utils.UniversalUsage;
 import org.bukkit.command.CommandSender;
-import org.bukkit.event.EventHandler;
-import org.bukkit.event.Listener;
-import org.bukkit.event.entity.PlayerDeathEvent;
 
 public class Spigot extends UniversalUsage {
 

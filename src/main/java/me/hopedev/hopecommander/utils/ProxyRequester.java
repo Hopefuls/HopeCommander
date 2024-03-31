@@ -3,7 +3,9 @@ package me.hopedev.hopecommander.utils;
 import com.google.common.collect.Iterables;
 import com.google.common.io.ByteArrayDataOutput;
 import com.google.common.io.ByteStreams;
-import me.hopedev.hopecommander.Spigot.SpigotMain;
+
+import me.hopedev.hopecommander.spigot.SpigotMain;
+
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
